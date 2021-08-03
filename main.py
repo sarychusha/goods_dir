@@ -96,6 +96,7 @@ insert_query_goods = f"""INSERT INTO goods (id, name, package_height, package_wi
 ({id_good},'{name}',{width},{height})
 ON CONFLICT (id) DO NOTHING;"""
 cursor.execute(insert_query_goods)
+connection.commit()
 
 for key, value in data.items():
     if key == "location_and_quantity":
