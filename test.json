@@ -1,0 +1,18 @@
+{
+    "id": 15,
+    "name": "Телевизор",
+    "package_params": {
+        "width": 5,
+        "height": 10
+    },
+    "location_and_quantity": [
+        {
+            "location": "Магазин на Труда",
+            "amount": 15
+        },
+        {
+            "location": "Магазин в центре",
+            "amount": 12
+        }
+    ]
+}
