@@ -54,6 +54,7 @@ def execute_query(connection: psycopg2.extensions.connection, query: str) -> Non
     cursor = connection.cursor()
     try:
         cursor.execute(query)
+        connection.commit()
         print("Query executed successfully")
     except OperationalError:
         print("Ошибка  выполнении запроса")
@@ -117,3 +118,5 @@ for key, value in data.items():
                 insert_query_shops = f"""INSERT INTO shops_goods (id_good, location, amount)
                 VALUES ({id_good}, '{location}',{amount});"""
                 cursor.execute(insert_query_shops)
+
+connection.commit()
